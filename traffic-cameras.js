@@ -1,6 +1,73 @@
-/* Traffic camera data downloaded from  https://open.toronto.ca/dataset/traffic-cameras/ in JSON format*/
+/* About Traffic Cameras
+The Traffic Camera dataset contains the location and number for every Traffic camera in the City of Toronto. These datasets will be updated within 2 minutes when cameras are added, changed, or removed.
 
-jsonTMCEarthCamerasCallback({"Data":[
+The camera list files can be found at: http://opendata.toronto.ca/transportation/tmc/rescucameraimages/Data/
+
+tmcearthcameras.csv - CSV, camera list in CSV
+tmcearthcameras.json - json formatted list.
+tmcearthcamerassn.json - json formatted file containing the timestamp of the list files.
+tmcearthcameras.xml - xml formatted list.
+TMCEarthCameras.xsd - xml schema document.
+
+The dataset includes the number, name, WGS84 information (latitude, longitude), comparison directions (1- Looking North, 2-Looking East, 3-Looking South and 4-Looking West), and camera group.
+
+The camera images associated with the dataset can be found at: http://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages.
+
+And the comparison images can be found at: http://opendata.toronto.ca/transportation/tmc/rescucameraimages/ComparisonImages.
+
+The camera image file name is created as follows:
+loc####.jpg - where #### is the camera number. (i.e. loc1234.jpg)
+
+The camera comparison image file names are created as follows:
+loc####D.jpg - where #### is the camera number and D is the direction. (i.e. loc1234e.jpg and loc1234w.jpg)
+
+The camera images are displayed on the City's website at http://www.toronto.ca/rescu/index.htmor http://www.toronto.ca/rescu/list.htm*/
+
+//new Camera
+function Camera(data){
+    this.number = data.Number;
+    this.name = data.Name;
+    this.lat = parseFloat(data.Latitude);
+    this.lng = parseFloat(data.Longitude);
+    this.directions = {
+        d1: data.D1,
+        d1: data.D2,
+        d1: data.D3,
+        d1: data.D4
+    };
+}
+
+Camera.prototype.getImageURL = ()=> {
+    let baseURL = 'http://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages';
+    return `${baseURL}/loc${this.number}.jpg`;
+}
+
+Camera.prototype.getDirectionImages = ()=>{
+    let directionImages = [];
+    let directions = this.directions;
+    let number = this.number;
+
+    let baseURL = 'http://opendata.toronto.ca/transportation/tmc/rescucameraimages/ComparisonImages';
+
+
+    ['d1','d2','d3','d4',].forEach((key) => { 
+
+    let direction = directions.d1;
+    if (direction){
+            directionImages.push({
+                url: `${baseURL}/loc${number}${direction}.jpg`,
+                direction: direction
+
+            });
+        }
+
+    })
+        return directionImages;
+};
+
+
+//Traffic Cameras data
+trafficCameras = [
     {"Number":"8001","Name":"YORK ST & BREMNER BLVD","Latitude":"43.643079","Longitude":"-79.381407","D1":"n","D2":"e","D3":"s","D4":"w","Group":"Arterial"},
     {"Number":"8002","Name":"LOWER SIMCOE ST & BREMNER BLVD","Latitude":"43.64222","Longitude":"-79.384068","D1":"n","D2":"e","D3":"s","D4":"w","Group":"Arterial"},
     {"Number":"8003","Name":"JARVIS ST & FRONT ST E / LOWER JARVIS ST","Latitude":"43.649461","Longitude":"-79.371267","D1":"n","D2":"e","D3":"s","D4":"w","Group":"Arterial"},
@@ -308,5 +375,6 @@ jsonTMCEarthCamerasCallback({"Data":[
     {"Number":"9405","Name":"W R ALLEN RD & 401 C E ALLEN RD RAMP @ 150m SOUTH OF","Latitude":"43.728143","Longitude":"-79.448634","D1":"n","D2":"e","D3":"s","D4":"w","Group":"Allen"},
     {"Number":"9406","Name":"W R ALLEN RD & TRANSIT RD @ 280m SOUTH OF","Latitude":"43.739609","Longitude":"-79.45257","D1":"n","D2":"","D3":"s","D4":"","Group":"Allen"},
     {"Number":"9407","Name":"W R ALLEN RD & SHEPPARD AVE W","Latitude":"43.749974","Longitude":"-79.463592","D1":"n","D2":"e","D3":"s","D4":"w","Group":"Allen"}
-    ]});
-    
+    ].map(function(data){  
+        return new Camera(data);
+    });
