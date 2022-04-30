@@ -1,0 +1,22 @@
+{
+  "name": "trafficcameras",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yarince90/Traffic_Cameras.git"
+  },
+  "author": "Yarince Vigil",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Yarince90/Traffic_Cameras/issues"
+  },
+  "homepage": "https://github.com/Yarince90/Traffic_Cameras#readme",
+  "dependencies": {
+    "lite-server": "^2.6.1"
+  }
+}
