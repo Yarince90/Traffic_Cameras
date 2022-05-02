@@ -1,3 +1,28 @@
+/* About Traffic Cameras
+The Traffic Camera dataset contains the location and number for every Traffic camera in the City of Toronto. These datasets will be updated within 2 minutes when cameras are added, changed, or removed.
+
+The camera list files can be found at: http://opendata.toronto.ca/transportation/tmc/rescucameraimages/Data/
+
+tmcearthcameras.csv - CSV, camera list in CSV
+tmcearthcameras.json - json formatted list.
+tmcearthcamerassn.json - json formatted file containing the timestamp of the list files.
+tmcearthcameras.xml - xml formatted list.
+TMCEarthCameras.xsd - xml schema document.
+
+The dataset includes the number, name, WGS84 information (latitude, longitude), comparison directions (1- Looking North, 2-Looking East, 3-Looking South and 4-Looking West), and camera group.
+
+The camera images associated with the dataset can be found at: http://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages.
+
+And the comparison images can be found at: http://opendata.toronto.ca/transportation/tmc/rescucameraimages/ComparisonImages.
+
+The camera image file name is created as follows:
+loc####.jpg - where #### is the camera number. (i.e. loc1234.jpg)
+
+The camera comparison image file names are created as follows:
+loc####D.jpg - where #### is the camera number and D is the direction. (i.e. loc1234e.jpg and loc1234w.jpg)
+
+The camera images are displayed on the City's website at http://www.toronto.ca/rescu/index.htmor http://www.toronto.ca/rescu/list.htm*/
+
 //new Camera
 function Camera(data){
     this.number = data.Number;
