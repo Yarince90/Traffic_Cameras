@@ -16,6 +16,15 @@ buildMenuItem = (camera)=>{
             let cameraMenuItem = buildMenuItem(camera);
             nav.appendChild(cameraMenuItem);
         });
+
+        nav.addEventListener('click', function(event){
+            let cameraNumber = event.target.id;
+
+            let camera = trafficCameras.find(function(camera){
+                return camera.number === cameraNumber;
+            });
+            console.log(cameraNumber, camera);
+        });
     }
     
     window.onload = ()=> {
