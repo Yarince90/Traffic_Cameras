@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "server": "lite-server --baseDir=\"src\"",
+    "start": "npm run server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

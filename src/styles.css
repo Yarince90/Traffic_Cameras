@@ -12,7 +12,8 @@ body{
 
 header{
     flex: 1;
-    background-color: red;
+    background-color: #041621;
+    color: white;
 }
 
 #app{
@@ -23,11 +24,25 @@ header{
 
 nav{
     flex: 1;
-    background-color: skyblue;
     overflow-y: auto;
+}
+
+.menu-item{
+    background-color: #0b3954;
+    color: #b5bec6;
+    cursor: pointer;
+    padding: 8px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border-left: 3px solid transparent;
+}
+
+.menu-item:hover{
+color: #c7dbe6;
+border-left: 3px solid #bfb1c1;
 }
 
 main{
     flex: 3;
-    background-color: green;
 }

@@ -1,4 +1,5 @@
 /* About Traffic Cameras
+
 The Traffic Camera dataset contains the location and number for every Traffic camera in the City of Toronto. These datasets will be updated within 2 minutes when cameras are added, changed, or removed.
 
 The camera list files can be found at: http://opendata.toronto.ca/transportation/tmc/rescucameraimages/Data/
@@ -21,48 +22,48 @@ loc####.jpg - where #### is the camera number. (i.e. loc1234.jpg)
 The camera comparison image file names are created as follows:
 loc####D.jpg - where #### is the camera number and D is the direction. (i.e. loc1234e.jpg and loc1234w.jpg)
 
-The camera images are displayed on the City's website at http://www.toronto.ca/rescu/index.htmor http://www.toronto.ca/rescu/list.htm*/
+The camera images are displayed on the City's website at http://www.toronto.ca/rescu/index.htmor http://www.toronto.ca/rescu/list.htm
+*/
 
 //new Camera
-function Camera(data){
+function Camera(data) {
     this.number = data.Number;
     this.name = data.Name;
     this.lat = parseFloat(data.Latitude);
     this.lng = parseFloat(data.Longitude);
     this.directions = {
         d1: data.D1,
-        d1: data.D2,
-        d1: data.D3,
-        d1: data.D4
+        d2: data.D2,
+        d3: data.D3,
+        d4: data.D4
     };
 }
 
 Camera.prototype.getImageURL = ()=> {
     let baseURL = 'http://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages';
-    return `${baseURL}/loc${this.number}.jpg`;
-}
+    let cameraNumber = this.number;
+    return `${baseURL}/loc${cameraNumber}.jpg`;
+};
 
-Camera.prototype.getDirectionImages = ()=>{
-    let directionImages = [];
+Camera.prototype.getDirectionImages = function(){
+    let directionData = [];
     let directions = this.directions;
     let number = this.number;
 
     let baseURL = 'http://opendata.toronto.ca/transportation/tmc/rescucameraimages/ComparisonImages';
 
+    ['d1','d2','d3','d4'].forEach((key) => { 
 
-    ['d1','d2','d3','d4',].forEach((key) => { 
-
-    let direction = directions.d1;
-    if (direction){
-            directionImages.push({
+    let direction = directions[key];
+    if (direction) {
+            directionData.push({
                 url: `${baseURL}/loc${number}${direction}.jpg`,
                 direction: direction
 
             });
         }
-
     })
-        return directionImages;
+        return directionData;
 };
 
 
@@ -375,6 +376,6 @@ trafficCameras = [
     {"Number":"9405","Name":"W R ALLEN RD & 401 C E ALLEN RD RAMP @ 150m SOUTH OF","Latitude":"43.728143","Longitude":"-79.448634","D1":"n","D2":"e","D3":"s","D4":"w","Group":"Allen"},
     {"Number":"9406","Name":"W R ALLEN RD & TRANSIT RD @ 280m SOUTH OF","Latitude":"43.739609","Longitude":"-79.45257","D1":"n","D2":"","D3":"s","D4":"","Group":"Allen"},
     {"Number":"9407","Name":"W R ALLEN RD & SHEPPARD AVE W","Latitude":"43.749974","Longitude":"-79.463592","D1":"n","D2":"e","D3":"s","D4":"w","Group":"Allen"}
-    ].map(function(data){  
+    ].map((data)=>{
         return new Camera(data);
     });
