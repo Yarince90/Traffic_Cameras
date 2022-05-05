@@ -45,4 +45,17 @@ border-left: 3px solid #bfb1c1;
 
 main{
     flex: 3;
+    display: flex;
+    flex-direction: column;
+}
+
+#images{
+flex: 1;
+background-color: #a6cc8b;
+color: #686950;
+}
+
+#map{
+flex: 3;
+height: 100%;
 }

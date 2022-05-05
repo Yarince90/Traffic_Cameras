@@ -23,10 +23,39 @@ buildMenuItem = (camera)=>{
             let camera = trafficCameras.find(function(camera){
                 return camera.number === cameraNumber;
             });
-            console.log(cameraNumber, camera);
+            updateMap(camera.lat, camera.lng);
         });
     }
     
+    let map;
+    let marker;
+
+    function updateMap(lat, lng) {
+
+        if(marker){
+            marker.setLatLng({
+                lat: lat,
+                lng: lng
+            })
+        }
+        else{
+            marker = L.marker([lat, lng]).addTo(map);
+        }
+        map.setView([lat, lng]);
+    }
+
+    function buildMap() {
+        let senecaCoords = [43.7952, -79.3497];
+        map = L.map('map').setView(senecaCoords, 16);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+
+    }
+
     window.onload = ()=> {
         buildMenu();
+        buildMap();
     };
