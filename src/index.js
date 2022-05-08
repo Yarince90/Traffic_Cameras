@@ -24,7 +24,16 @@ buildMenuItem = (camera)=>{
                 return camera.number === cameraNumber;
             });
             updateMap(camera.lat, camera.lng);
+            updateImages(camera);
         });
+    }
+
+    function updateImages(camera){
+        let cameraImage = document.querySelector('#camera-image');
+        cameraImage.src = camera.getImageURL();
+
+        let imagesDiv = document.querySelector('#images');
+        imagesDiv.classList.remove('hidden');
     }
     
     let map;
