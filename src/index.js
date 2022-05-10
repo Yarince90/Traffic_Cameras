@@ -39,10 +39,21 @@ buildMenuItem = (camera)=>{
         let directionData = camera.getDirectionImages();
 
         directionData.forEach(function(data){
+            
+            let div = document.createElement('div');
+            div.className = 'directionCamera';
+            
+            
             let img = document.createElement('img');
             img.src = data.url;
 
-            directionsDiv.appendChild(img);
+            div.appendChild(img);
+
+            let span = document.createElement('span');
+            span.innerText = data.direction.toUpperCase();
+            div.appendChild(span);
+
+            directionsDiv.appendChild(div);
         });
 
         let imagesDiv = document.querySelector('#images');
