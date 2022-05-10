@@ -32,6 +32,19 @@ buildMenuItem = (camera)=>{
         let cameraImage = document.querySelector('#camera-image');
         cameraImage.src = camera.getImageURL();
 
+        let directionsDiv = document.querySelector('#directions');
+
+        directionsDiv.innerHTML = '';
+
+        let directionData = camera.getDirectionImages();
+
+        directionData.forEach(function(data){
+            let img = document.createElement('img');
+            img.src = data.url;
+
+            directionsDiv.appendChild(img);
+        });
+
         let imagesDiv = document.querySelector('#images');
         imagesDiv.classList.remove('hidden');
     }

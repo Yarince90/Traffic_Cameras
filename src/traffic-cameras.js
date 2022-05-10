@@ -39,7 +39,7 @@ function Camera(data) {
     };
 }
 
-Camera.prototype.getImageURL = ()=> {
+Camera.prototype.getImageURL = function() {
     let baseURL = 'http://opendata.toronto.ca/transportation/tmc/rescucameraimages/CameraImages';
     let cameraNumber = this.number;
     return `${baseURL}/loc${cameraNumber}.jpg`;
@@ -379,3 +379,4 @@ trafficCameras = [
     ].map((data)=>{
         return new Camera(data);
     });
+    

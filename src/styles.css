@@ -53,12 +53,22 @@ main{
 flex: 1;
 background-color: #a6cc8b;
 color: #686950;
+display: flex;
+justify-content: space-around;
+max-height: 250px;
 }
 
 #map{
 flex: 3;
 height: 100%;
 }
+
 .hidden {
     display: none !important;
+}
+
+#directions {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
 }
