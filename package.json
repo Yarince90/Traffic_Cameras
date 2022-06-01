@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/Yarince90/Traffic_Cameras#readme",
   "dependencies": {
+    "eslint": "^8.16.0",
     "lite-server": "^2.6.1",
     "prettier": "^2.6.2"
   }
