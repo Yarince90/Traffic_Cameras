@@ -7,6 +7,5 @@ OR open with visual studio code and enter "npm start" on the terminal
 
 In this project I use https://leafletjs.com to create and use a map with a marker and use javaScript to create functions in order to create a menu with dynamic menu items based on the traffic camera’s various locations. I then created an event listener using the DOM and then created a click handler in order to load the corresponding traffic camera images for each traffic camera listed in the menu.
 
-The CSS / layout is not the greatest for this web app as I was focusing mostly in functionality more then appearance but will probably come back to it at a later date to fix it up a bit and make it look more presentable.
-
-![image](https://user-images.githubusercontent.com/59423827/171318588-6a9d3b19-6f3d-4c01-9719-bf84d9de0667.png)
+The CSS / layout is not the greatest for this web app as I was focusing mostly in functionality more then appearance but will probably come back to it at a later date to fix it up a bit and make it look a little better.
+![image](https://user-images.githubusercontent.com/59423827/171319336-fcc336c8-907b-4bdc-8ea1-00a9d18f5cfd.png)
