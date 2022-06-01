@@ -2,7 +2,7 @@
 
 The Traffic Camera dataset contains the location and number for every Traffic camera in the City of Toronto. These datasets will be updated within 2 minutes when cameras are added, changed, or removed.
 
-The camera list files can be found at: http://opendata.toronto.ca/transportation/tmc/rescucameraimages/Data/
+The camera list files can be found at: [http://opendata.toronto.ca/transportation/tmc/rescucameraimages/Data/](https://ckan0.cf.opendata.inter.prod-toronto.ca/tl/dataset/traffic-cameras)
 
 tmcearthcameras.csv - CSV, camera list in CSV
 tmcearthcameras.json - json formatted list.
