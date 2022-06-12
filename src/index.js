@@ -16,7 +16,7 @@ buildMenuItem = (camera)=>{
             let cameraMenuItem = buildMenuItem(camera);
             nav.appendChild(cameraMenuItem);
         });
-
+        
         //Adds a click handler
         nav.addEventListener('click', function(event){
             //Find what camera ID was clicked
