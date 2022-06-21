@@ -2,7 +2,6 @@ html, body{
     height: 100%;
     max-height: 100%;
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
 }
 
 body{
@@ -11,12 +10,15 @@ body{
     overflow: hidden;
 }
 
-header{
+nav{
     flex: 1;
-    background-color: #041621;
-    color: white;
-    padding-left: 8px;
-    text-align: center;
+    overflow-y: auto;
+}
+
+main{
+    flex: 3;
+    display: flex;
+    flex-direction: column;
 }
 
 #app{
@@ -25,11 +27,43 @@ header{
     overflow-y: auto;
 }
 
-nav{
-    flex: 1;
-    overflow-y: auto;
+#images{
+   flex: 1;
+   margin: 10px;
+   margin-top: 10px;
+   margin-right: 10px;
+   margin-bottom: 10px;
+   margin-left: 10px;
+   background-color: #ffffff;
+   width: 30%;
+   min-width: 250px;
+   height: auto;
+   padding-bottom: 10px;
+   border-radius: 5px;
+   border-top-left-radius: 5px;
+   border-top-right-radius: 5px;
+   border-bottom-right-radius: 5px;
+   border-bottom-left-radius: 5px;
+   color: #686950;
+   display: flex;
+   max-height: 250px;
+}
+    
+#map{
+   flex: 3;
+   height: 100%;
 }
 
+#directions {
+   display: grid;
+   grid-template-rows: 1fr 1fr;
+   grid-template-columns: 1fr 1fr;
+
+}
+.header{
+    background-color: #0b3954;
+    color: #ffffff;
+}
 .menu-item{
     background-color: #0b3954;
     color: #b5bec6;
@@ -46,47 +80,8 @@ color: #c7dbe6;
 border-left: 3px solid #bfb1c1;
 }
 
-main{
-    flex: 3;
-    display: flex;
-    flex-direction: column;
-}
-
-#images{
-flex: 1;
-margin: 10px;
-margin-top: 10px;
-margin-right: 10px;
-margin-bottom: 10px;
-margin-left: 10px;
-background-color: #ffffff;
-width: 30%;
-min-width: 250px;
-height: auto;
-padding-bottom: 10px;
-border-radius: 5px;
-border-top-left-radius: 5px;
-border-top-right-radius: 5px;
-border-bottom-right-radius: 5px;
-border-bottom-left-radius: 5px;
-color: #686950;
-display: flex;
-max-height: 250px;
-}
-
-#map{
-flex: 3;
-height: 100%;
-}
-
 .hidden {
     display: none !important;
-}
-
-#directions {
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
 }
 
 .directionCamera {
