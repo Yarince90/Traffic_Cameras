@@ -7,16 +7,7 @@ buildMenuItem = (camera)=>{
     menuItem.innerText = camera.name;
     return menuItem;
     }
-
-    //Creates Header title
-    buildHeader = ()=>{
-        let header = document.createElement('h1');
-        header.className = 'header';
-        header.title = 'Toronto Traffic Cameras';
-        header.innerText = 'Toronto Traffic Cameras';
-        return header;
-    }
-
+    
     //Creates camera menu items and registers a click handler
     buildMenu = function() {
         let nav = document.querySelector('nav');
@@ -25,7 +16,7 @@ buildMenuItem = (camera)=>{
             let cameraMenuItem = buildMenuItem(camera);
             nav.appendChild(cameraMenuItem);
         });
-        
+
         //Adds a click handler
         nav.addEventListener('click', function(event){
             //Find what camera ID was clicked
@@ -113,7 +104,6 @@ buildMenuItem = (camera)=>{
     }
 
     window.onload = ()=> {
-        buildHeader();
         buildMenu();
         buildMap();
     };

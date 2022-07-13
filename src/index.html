@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <!--meta Data-->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Toronto Traffic Cameras</title>
@@ -13,24 +12,27 @@
 
         <!--Lead CSS-->
         <link rel="stylesheet" href="styles.css" type="text/css">
+
     </head>
     
     <body>
-        <div id="app">
-            <h1 class="header">
+        <header>
+        <h1>Toronto Traffic Cameras</h1>
+        </header>
 
-            </h1>
+        <div id="app">
             <nav>
-                <!--Map (Leaflets)-->
             </nav>
-                <main>
-                    <div id="images" class="hidden">
-                        <img id="camera-image">
-                        <div id="directions">
-                        </div>
+
+            <main>
+                <div id="images" class="hidden">
+                    <img id="camera-image">
+                    <div id="directions">
                     </div>
-                    <div id="map"></div>
-                </main>
+                    
+                </div>
+                <div id="map"></div>
+            </main>
         </div>
 
         <!--Load Leaflet JavaScript-->
