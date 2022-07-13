@@ -13,6 +13,6 @@ I created a menu with dynamic menu items based on the traffic camera’s various
 
 The CSS / layout is not the greatest for this web app as I was focusing mostly in functionality more then appearance, however I will probably come back to it at a later date to fix it up a bit and make it look a little better.
 
-![image](https://user-images.githubusercontent.com/59423827/171320058-899b8568-e451-4b0e-8457-90c50376b36a.png)
+![image](https://user-images.githubusercontent.com/59423827/178817206-6f62027f-a9c4-459d-b2e3-45a0b718d237.png)
 
-![image](https://user-images.githubusercontent.com/59423827/171320141-89f3096b-4c2d-478f-b24e-fb56c91dbd00.png)
+![image](https://user-images.githubusercontent.com/59423827/178817300-c5a46454-32f1-43ea-a8f7-9b9a9cb99e83.png)
